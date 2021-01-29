@@ -57,7 +57,7 @@ public class DisciplinaResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/disciplinas")
-    @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
+
     public ResponseEntity<Disciplina> createDisciplina(@Valid @RequestBody Disciplina disciplina)
             throws URISyntaxException {
         log.debug("REST request to save Disciplina : {}", disciplina);
@@ -133,7 +133,7 @@ public class DisciplinaResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/disciplinas/{id}")
-    @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
+
     public ResponseEntity<Void> deleteDisciplina(@PathVariable Long id) {
         log.debug("REST request to delete Disciplina : {}", id);
         disciplinaRepository.deleteById(id);
