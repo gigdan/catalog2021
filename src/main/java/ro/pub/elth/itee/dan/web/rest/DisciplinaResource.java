@@ -57,7 +57,7 @@ public class DisciplinaResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/disciplinas")
-
+    // @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<Disciplina> createDisciplina(@Valid @RequestBody Disciplina disciplina)
             throws URISyntaxException {
         log.debug("REST request to save Disciplina : {}", disciplina);
